@@ -6,8 +6,8 @@ namespace Snake_Game
 {
     class Point
     {
-        int x;
-        int y;
+        public int x;
+        public int y;
         char sym;
         public Point(int _x, int _y, char _sym)
         {
@@ -49,5 +49,12 @@ namespace Snake_Game
             sym = ' ';
             Draw();
         }
+
+        public bool IsHit(Point targetPoint)
+        {
+            return targetPoint.x == this.x && targetPoint.y == this.y;
+        }
+        
+
     }
 }

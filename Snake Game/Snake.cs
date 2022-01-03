@@ -7,6 +7,9 @@ namespace Snake_Game
     class Snake : Figure
     {
         Direction direction;
+        Point tail;
+        Point head;
+        public int score;
         public Snake(Point tail, int lenght, Direction _direction)
         {
             direction = _direction;
@@ -17,14 +20,15 @@ namespace Snake_Game
                 p.Move(i, direction);
                 pList.Add(p);
             }
-            
+            this.tail = tail;
+            score = 0;
         }
 
         internal void Move()
         {
             Point tail = pList[0];
             pList.Remove(tail);
-            Point head = GetNextPoint();
+            head = GetNextPoint();
             pList.Add(head);
 
             tail.Clear();
@@ -60,6 +64,12 @@ namespace Snake_Game
             }
         }
 
-  
+        public bool IsHit(Point targetPoint)
+        {
+            return head.IsHit(targetPoint);
+        }
+        
+        
+
     }
 }

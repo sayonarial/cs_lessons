@@ -6,7 +6,7 @@ namespace Snake_Game
 {
     class Walls
     {
-        List<Figure> wallist;
+        public List<Figure> wallist;
         public Walls(int width, int height, char sym)
         {
             wallist = new List<Figure>();
@@ -28,6 +28,16 @@ namespace Snake_Game
             {
                 wall.Draw();
             }
+        }
+
+        public bool IsHit(Figure targetFigure)
+        {
+            foreach(var wall in wallist)
+            {
+                if (wall.IsHit(targetFigure))
+                    return true;
+            }
+            return false;
         }
     }
 }

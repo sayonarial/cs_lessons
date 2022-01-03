@@ -15,5 +15,24 @@ namespace Snake_Game
                 p.Draw();
             }
         }
+        
+        public bool IsHit(Figure targetFigure)
+        {
+            foreach (var p in pList)
+            {
+                if (targetFigure.IsHit(p))
+                    return true;
+            }
+            return false;
+        }
+        public bool IsHit(Point targetPoint)
+        {
+            foreach (var p in pList)
+            {
+                if (p.IsHit(targetPoint))
+                    return true;
+            }
+            return false;
+        }
     }
 }
