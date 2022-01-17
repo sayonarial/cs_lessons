@@ -9,9 +9,9 @@ namespace Kordamine_var_2
 {
     partial class Program
     {
+        
         static void Main(string[] args)
         {
-
 
             int UserChoice;
 

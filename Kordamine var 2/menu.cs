@@ -43,7 +43,7 @@ namespace Kordamine_var_2
         static void EndOrRepeat()
         {
 
-            Console.WriteLine("Нажмите любую клавишу чтобы закончить или Enter чтобы выйти в глваное меню");
+            Console.WriteLine("Нажмите любую клавишу чтобы закончить или Enter чтобы выйти в главное меню");
             ConsoleKeyInfo keyPressed = Console.ReadKey(true);
             if (keyPressed.Key != ConsoleKey.Enter)
             {
