@@ -11,6 +11,7 @@ namespace Snake_Pro_Ver
 
         public string Name { get; }
         public Action Selected { get; }
+       
         public List<string> ItemOptions {get;}
         int SelectedOptionIndex;
 
@@ -19,13 +20,7 @@ namespace Snake_Pro_Ver
             Name = name;
             Selected = selected;
         }
-        public MenuItem(string name,List<string> optionList, ref int optionIndex)
-        {
-            Name = name;
-            ItemOptions = optionList;
-            this.SelectedOptionIndex = optionIndex;
 
-        }
 
 
         public void Show()

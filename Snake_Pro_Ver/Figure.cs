@@ -9,8 +9,8 @@ namespace Snake_Pro_Ver
     class Figure
     {
 
-        char symbol;
-        List<Pixel> PixelList = new List<Pixel>();
+        public char symbol;
+        public List<Pixel> PixelList = new List<Pixel>();
         // Instantiate random number generator using system-supplied value as seed.
         Random rand = new Random();
 
@@ -56,6 +56,16 @@ namespace Snake_Pro_Ver
                 CreateHorisontalLine(new Pixel(leftX,y),new Pixel(rightX,y));
             }
         }
+        public void CreateBox(Pixel upLeft, int width, int height)
+        {
+
+            for (int y = upLeft.y; y <= height + upLeft.y; y++)
+            {
+                CreateHorisontalLine(new Pixel(upLeft.x, y), new Pixel(upLeft.x+width, y));
+            }
+        }
+
+
         public void CreateFrame(Pixel upLeft, Pixel downRight)
         {
             CreateHorisontalLine(upLeft, new Pixel(downRight.x, upLeft.y));
@@ -119,6 +129,20 @@ namespace Snake_Pro_Ver
                         PixelList.RemoveAt(i);
                         break;
                     }                  
+                }
+            }
+
+        }
+
+        public void Remove(Pixel removablePixel)
+        {
+
+            for (int i = 0; i < PixelList.Count; i++)
+            {
+                if (PixelList[i].x == removablePixel.x && PixelList[i].y == removablePixel.y)
+                {
+                    PixelList.RemoveAt(i);
+                    break;
                 }
             }
 

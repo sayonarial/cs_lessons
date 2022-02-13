@@ -35,10 +35,11 @@ namespace Snake_Pro_Ver
 
             if(!MenuIsDisplayed)
             {
-                Console.Clear();
+                
                 Console.SetCursorPosition(0, 0);
                 if (DisplaySnakeLogo)SnakeLogo.ShowSnakeLogo();
                 ShowMenuInstructions();
+                ShowCreator();
                 Console.SetCursorPosition(0, 13);
                 Console.WriteLine($"--------------------------------------  {Name}  ----------------------------------------");
                 UpdateMenu();
@@ -84,6 +85,7 @@ namespace Snake_Pro_Ver
                     case ConsoleKey.Enter:
                         EnterIsPressed = true;
                         MenuIsDisplayed = false;
+                        Console.Clear();
                         ItemsList[SelectedItem].Selected.Invoke();
                         return false;
                         break;
@@ -94,8 +96,12 @@ namespace Snake_Pro_Ver
         }
         void ShowMenuInstructions()
         {
-            Console.SetCursorPosition(30, 25);
-            Console.Write("Use (↓) (↑) and Enter to navigate");
+            
+            Terminal.CenteredText("Use (↓) (↑) and Enter to navigate", 90, 25);
+        }
+        void ShowCreator()
+        {
+            Terminal.CenteredText("Yevgeniy Onufrak 2022",90,26);
         }
     }
 }

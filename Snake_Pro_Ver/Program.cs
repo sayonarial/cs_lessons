@@ -17,12 +17,11 @@ namespace Snake_Pro_Ver
             Console.CursorVisible = false;
             Console.Title = "Super Snake Game";
             
-            Game Game = new Game(100,26); //create game window
+            Game Game = new Game(90,26); //create game window
 
             while (true)
             {
                 Game.GameLoop();
-                Thread.Sleep(50);
             }
             
            

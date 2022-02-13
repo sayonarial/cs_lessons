@@ -55,18 +55,22 @@ namespace Snake_Pro_Ver
                 switch (key.Key)
                 {
                     case ConsoleKey.LeftArrow:
+                        if (direction == DIRECTION.RIGHT) break;
                         direction = DIRECTION.LEFT;
                         pressCounts++;
                         break;
                     case ConsoleKey.RightArrow:
+                        if (direction == DIRECTION.LEFT) break;
                         direction = DIRECTION.RIGHT;
                         pressCounts++;
                         break;
                     case ConsoleKey.UpArrow:
+                        if (direction == DIRECTION.DOWN) break;
                         direction = DIRECTION.UP;
                         pressCounts++;
                         break;
                     case ConsoleKey.DownArrow:
+                        if (direction == DIRECTION.UP) break;
                         direction = DIRECTION.DOWN;
                         pressCounts++;
                         break;
